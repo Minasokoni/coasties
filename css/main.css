@@ -1,0 +1,13 @@
+html {
+	border:12px solid #fff;
+}
+body {
+	background:#f8f4e6;
+	margin:0;
+	padding:0;
+}
+
+.orbit-slide-number,
+.orbit-timer {
+	display:none;
+}
