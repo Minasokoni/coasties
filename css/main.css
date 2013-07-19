@@ -1,5 +1,5 @@
 html {
-	border:12px solid #fff;
+	border:0.750em solid #fff;
 }
 body {
 	background:#f8f4e6;
@@ -7,7 +7,43 @@ body {
 	padding:0;
 }
 
+header#main {
+	width:100%;
+	height:11.688em;
+}
+
+header#main nav ul {
+	list-style:none;
+}
+header#main nav ul li {
+	float:left;
+	text-align:center;
+	padding:5.063em 0;
+}
+
+h3.section {
+	text-align:center;
+}
+
 .orbit-slide-number,
 .orbit-timer {
 	display:none;
+}
+
+.center {
+	text-align:center;
+}
+.bottom {
+	padding-top:2.15em;
+}
+
+footer#main {
+	width:100%;
+	background:#fff;
+	margin:5.750em 0 0 0;
+	padding:2.500em 0 0 0;
+}
+
+footer#main a {
+	display:block;
 }
