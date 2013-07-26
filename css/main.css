@@ -1,3 +1,27 @@
+/* Web fonts */
+
+@font-face {
+    font-family: 'gtb';
+    src: url('../font/gt-walsheim-bold-web.eot');
+    src: url('../font/gt-walsheim-bold-web.eot?#iefix') format('embedded-opentype'),
+         url('../font/gt-walsheim-bold-web.woff') format('woff'),
+         url('../font/gt-walsheim-bold-web.ttf') format('truetype'),
+         url('../font/gt-walsheim-bold-web.svg#gt_walsheim_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt';
+    src: url('../font/gt-walsheim-web.eot');
+    src: url('../font/gt-walsheim-web.eot?#iefix') format('embedded-opentype'),
+         url('../font/gt-walsheim-web.woff') format('woff'),
+         url('../font/gt-walsheim-web.ttf') format('truetype'),
+         url('../font/gt-walsheim-web.svg#gt_walsheim_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
 	border:0.750em solid #fff;
 }
@@ -5,6 +29,20 @@ body {
 	background:#f8f4e6;
 	margin:0;
 	padding:0;
+	font:normal normal 1.125em 'gt', sans-serif;
+}
+
+h2, h3 {
+	font-family: 'gtb', sans-serif;
+	font-weight:normal;
+}
+
+h3.title {
+	font-size:1.9em;
+}
+
+p.sub {
+	line-height:2.5em;
 }
 
 header#main {
@@ -34,16 +72,180 @@ h3.section {
 	text-align:center;
 }
 .bottom {
-	padding-top:2.15em;
+	padding-top:20px;
 }
 
 footer#main {
 	width:100%;
 	background:#fff;
+	float:left;
 	margin:5.750em 0 0 0;
 	padding:2.500em 0 0 0;
 }
 
-footer#main a {
+footer#main .footer-block > a {
+	display:block;
+}
+
+.items .panel {
+	background:#fff;
+	border:none;
+	padding:1.7em;
+}
+
+.grey {
+	background:#222;
+}
+.grid {
+	position:relative;
+}
+.block {
+	position:relative;
+	overflow:hidden;
+	background:#333;
+}
+.block a{
+	display:block;
+	width:100%;
+	height:100%;
+	text-align:center;
+	text-transform:uppercase;
+	color:#fff;
+	text-decoration:none;
+	font:normal normal 22px 'gtb', sans-serif;
+	letter-spacing:4px;
+}
+.big.block a {
+	line-height:500px;
+}
+.big.block {
+	width:500px;
+	height:500px;
+	margin:0 20px 0 0;
+	float:left;
+}
+
+.medium.block {
+	width:480px;
+	height:230px;
+	margin:0 0 20px 0;
+	float:left;
+}
+.medium.block a {
+	line-height:230px;
+}
+.small.block {
+	width:230px;
+	height:250px;
+	overflow:hidden;
+	margin:0 0 0 0px;
+	float:left;
+}
+.small.block a {
+	line-height:250px;
+}
+.small.block:last-child {
+	float:right;
+}
+
+.big.block .overlay {
+	bottom:-500px;
+}
+
+.medium.block .overlay {
+	bottom:-230px;
+}
+
+.small.block .overlay {
+	bottom:-250px;
+}
+
+.overlay {
+	background:rgba(0,0,0,0.4);
+	position: absolute;
+	z-index:9;
+	width:100%;
+	height:100%;
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	-webkit-transition: opacity 0.35s ease-in-out, bottom 0 linear;
+	-webkit-transition-delay: 0s, 0.35s;
+	-moz-transition: opacity 0.35s ease-in-out, bottom 0 linear 0.35s;
+	-o-transition: opacity 0.35s ease-in-out, bottom 0 linear 0.35s;
+	transition: opacity 0.35s ease-in-out, bottom 0 linear 0.35s;
+}
+
+.block:hover .overlay {
+	bottom: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	-webkit-transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
+	-moz-transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
+	-o-transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
+	transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
+}
+.large-6.small-6 {
+	padding:1.875em 0.9375em 0;
+}
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.row {
+	width:100%;
+	float: left;
+}
+.wrapper {
+	width:1000px;
+	margin:0 auto;
+}
+
+#slider {
+	width:100%;
+}
+
+#slider .row {
+	background:#636363;
+}
+.product {
+	background:#fff;
+}
+.product,
+.footer-block {
+	width:320px;
+	float:left;
+	margin:0 20px 0 0;
+}
+.product:last-child,
+.footer-block.last{
+	margin:0;
+}
+
+.copyright {
+	clear:both;
+	float:left;
+	width:100%;
+	border-top:1px solid #f8f4e6;
+	padding:20px 0 8px;
+	font-size:14px;
+}
+.copyright a {
+	text-decoration:none;
+	color:#000;
+}
+
+.panel {
+	background:#fff;
+	padding:25px;
+}
+.panel a {
+	text-decoration:none;
+	color:#000;
+	font-size:18px;
+	line-height:30px;
+}
+.panel a span {
 	display:block;
 }
