@@ -245,14 +245,19 @@ ul {
 	height:135px;
 	background:#fff;
 	margin-top:-68px;
-	text-indent:-9999px;
+	text-align:center;
+	line-height:135px;
+	display:block;
+	text-decoration:none;
+	color:#000;
+	font-size:23px;
 }
 a.nav.prev {
-	left:0;
+	left:-12px;
 	top:50%;
 }
 a.nav.next {
-	right:0;
+	right:-12px;
 	top:50%;
 }
 
