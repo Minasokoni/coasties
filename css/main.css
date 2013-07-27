@@ -77,12 +77,12 @@ h3.section {
 
 header#main nav ul {
 	margin:0 auto;
-	width:700px;
+	width:800px;
 	height:180px;
 }
 
 header#main nav ul li {
-	margin:0 33px;
+	margin:0 44px;
 	float:left;
 	text-align:center;
 }
@@ -92,6 +92,25 @@ header#main nav ul li a {
 	color:#000;
 	font:normal normal 16px 'gtb', sans-serif;
 	line-height:180px;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition:all 0.35s ease-in-out;
+	border-bottom:0px solid #000;
+	padding:0 0 5px 0;
+}
+
+header#main nav ul li a:hover {
+	border-bottom:3px solid #f83c23;
+	color:#f83c23;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition:all 0.35s ease-in-out;
+}
+
+header#main nav ul li#logo a:hover {
+	border:none;
 }
 
 
@@ -153,6 +172,7 @@ footer#main .footer-block.links > a {
 	text-decoration:none;
 	font:normal normal 22px 'gtb', sans-serif;
 	letter-spacing:4px;
+	text-shadow:1px 1px 0 #000;
 }
 .big.block a {
 	line-height:500px;
@@ -200,7 +220,7 @@ footer#main .footer-block.links > a {
 }
 
 .overlay {
-	background:rgba(0,0,0,0.4);
+	background:rgba(0,0,0,0.6);
 	position: absolute;
 	z-index:9;
 	width:100%;
@@ -222,9 +242,6 @@ footer#main .footer-block.links > a {
 	-moz-transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
 	-o-transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
 	transition: opacity 0.35s ease-in-out, bottom 0.7s cubic-bezier(0.24, 0.835, 0, 1);
-}
-.large-6.small-6 {
-	padding:1.875em 0.9375em 0;
 }
 
 ul {
@@ -269,6 +286,10 @@ a.nav.next {
 	overflow:hidden;
 	position:relative;
 }
+
+#slider img {
+	width:100%;
+}
 #slider ul {
 	width: 10000px;
 	list-style: none;
@@ -300,7 +321,7 @@ a.nav.next {
 	color:#fff;
 	background:#f83c23;
 	position: absolute;
-	top:50%;
+	top:38%;
 	left:50%;
 	margin-left:-85px;
 	margin-top:22px;
@@ -382,6 +403,7 @@ a.nav.next {
 	right:0;
 	font:normal normal 14px 'gtb', sans-serif;
 	color:#fff;
+	text-transform:uppercase;
 }
 .footer-block .social {
 	width:32px;
@@ -411,6 +433,12 @@ span.dash-berlin {
 	display:block;
 }
 
+.button {
+	padding:11px 30px;
+	background:#f83c23;
+	color:#fff;
+}
+
 @media only screen and (max-width: 400px) {
 	.wrapper {
 		width:320px;
@@ -419,23 +447,53 @@ span.dash-berlin {
 
 	.small.block,
 	.medium.block,
-	.bog.block {
+	.big.block {
 		width:320px;
 		height:320px;
 		margin:0 0 20px 0;
 		line-height:320px;
 	}
 
-.big.block .overlay,
-.medium.block .overlay,
-.small.block .overlay {
-	bottom:-320px;
-}
+	.big.block a,
+	.medium.block a,
+	.small.block a{
+		line-height:320px;
+	}
+
+	.big.block .overlay,
+	.medium.block .overlay,
+	.small.block .overlay{
+		opacity:1;
+		bottom:0;
+	}
 
 	.product,
 	.footer-block {
 		width:320px;
 		float:left;
 		margin:0 0 30px 0;
+	}
+
+	header#main nav ul {
+		margin:0 auto;
+		width:320px;
+		height:180px;
+	}
+
+	header#main nav ul li {
+		margin:0 53px;
+		float:left;
+		text-align:center;
+	}
+
+	header#main nav ul li#logo {
+		margin:0 86px;
+	}
+
+	header#main nav ul li a {
+		text-decoration:none;
+		color:#000;
+		font:normal normal 16px 'gtb', sans-serif;
+		line-height:180px;
 	}
 }
