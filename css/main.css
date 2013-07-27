@@ -47,6 +47,8 @@ h3.title {
 
 p.sub {
 	line-height:2.5em;
+	font-size:17px;
+	margin:0 0 60px 0;
 }
 
 header#main {
@@ -286,7 +288,6 @@ a.nav.next {
 .product {
 	background:#fff;
 	width:320px;
-	height:320px;
 	position: relative;
 	line-height:0;
 }
@@ -400,4 +401,41 @@ a.nav.next {
 }
 .footer-block .social:hover i {
 	color:#fff;
+}
+
+span.dash-berlin {
+	height:1px;
+	width:60px;
+	margin:34px auto;
+	background:#000;
+	display:block;
+}
+
+@media only screen and (max-width: 400px) {
+	.wrapper {
+		width:320px;
+		margin:0 auto;
+	}
+
+	.small.block,
+	.medium.block,
+	.bog.block {
+		width:320px;
+		height:320px;
+		margin:0 0 20px 0;
+		line-height:320px;
+	}
+
+.big.block .overlay,
+.medium.block .overlay,
+.small.block .overlay {
+	bottom:-320px;
+}
+
+	.product,
+	.footer-block {
+		width:320px;
+		float:left;
+		margin:0 0 30px 0;
+	}
 }
