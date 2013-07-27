@@ -439,25 +439,25 @@ span.dash-berlin {
 	color:#fff;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 320px) {
 	.wrapper {
-		width:320px;
+		width:300px;
 		margin:0 auto;
 	}
 
 	.small.block,
 	.medium.block,
 	.big.block {
-		width:320px;
-		height:320px;
+		width:300px;
+		height:300px;
 		margin:0 0 20px 0;
-		line-height:320px;
+		line-height:300px;
 	}
 
 	.big.block a,
 	.medium.block a,
 	.small.block a{
-		line-height:320px;
+		line-height:300px;
 	}
 
 	.big.block .overlay,
@@ -469,14 +469,14 @@ span.dash-berlin {
 
 	.product,
 	.footer-block {
-		width:320px;
+		width:300px;
 		float:left;
 		margin:0 0 30px 0;
 	}
 
 	header#main nav ul {
 		margin:0 auto;
-		width:320px;
+		width:300px;
 		height:180px;
 	}
 
