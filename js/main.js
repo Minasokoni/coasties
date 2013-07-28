@@ -48,6 +48,7 @@ var slider = slider || ( function ( container, nav) {
 
 
 ////////////////////////////////////////////////////////////////////////// JQuery init
+
 $(function(){
 
 	slider = new slider($('#slider > ul'), $('a.nav'));
