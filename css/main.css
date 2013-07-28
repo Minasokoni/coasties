@@ -256,6 +256,7 @@ ul {
 .wrapper {
 	width:1000px;
 	margin:0 auto;
+	position:relative;
 }
 #slider a.nav {
 	position: absolute;
@@ -349,11 +350,12 @@ a.nav.next {
 .footer-block {
 	width:320px;
 	float:left;
-	margin:0 20px 0 0;
+	margin:0 20px 20px 0;
 }
-.product:last-child,
-.footer-block.last{
-	margin:0;
+.listing .product:nth-child(3n+3),
+.footer-block.last,
+.home .product:last-child{
+	margin:0 0 20px 0;
 }
 
 .copyright {
@@ -433,6 +435,54 @@ span.dash-berlin {
 	display:block;
 }
 
+div#basket {
+	width:161px;
+	height:41px;
+	background:#fff url(../img/basket_bg.jpg) 0 0 no-repeat;
+	position: absolute;
+	right:0;
+	top:0;
+}
+
+div#basket a {
+	text-align:center;
+	display:block;
+	font-size:14px;
+	line-height:41px;
+	color:#000;
+	text-decoration:none;
+}
+
+/* listing */
+
+nav#subnav{
+	background:#fff;
+	width:100%;
+	height:50px;
+	float:left;
+}
+
+nav#subnav ul {
+	background:#fff;
+	width:600px;
+	margin:0 auto;
+}
+nav#subnav ul li {
+	float:left;
+	margin:0 41px;
+	text-align:center;
+	font:normal normal 16px 'gtb', sans-serif;
+}
+
+nav#subnav ul li a {
+	line-height:50px;
+	text-decoration:none;
+	color:#000;
+}
+nav#subnav ul li a:hover {
+	color:#f83c23;
+}
+
 .button {
 	padding:11px 30px;
 	background:#f83c23;
@@ -440,6 +490,7 @@ span.dash-berlin {
 }
 
 @media only screen and (max-width: 320px) {
+
 	.wrapper {
 		width:300px;
 		margin:0 auto;
