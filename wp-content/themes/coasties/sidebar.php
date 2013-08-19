@@ -6,6 +6,7 @@
  * @subpackage Twenty_Fourteen
  */
 ?>
+<?php /*
 <div id="secondary">
 	<div id="secondary-top">
 	<?php
@@ -41,3 +42,4 @@
 	<?php endif; // end sidebar widget area ?>
 	</div><!-- .widget-area -->
 </div><!-- #secondary -->
+ */ ?>

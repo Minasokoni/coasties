@@ -56,7 +56,8 @@ function twentyfourteen_setup() {
 	/**
 	 * Enable support for Post Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails', array( 'post' ) );
+	add_theme_support( 'post-thumbnails');
+	set_post_thumbnail_size( 300, 300 );
 
 	/**
 	 * Adding several sizes for Post Thumbnails
@@ -412,3 +413,21 @@ function twentyfourteen_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'twentyfourteen_wp_title', 10, 2 );
+
+add_theme_support( 'woocommerce' );
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<div class="wrapper">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</div>';
+}
+
+define('WOOCOMMERCE_USE_CSS', false);

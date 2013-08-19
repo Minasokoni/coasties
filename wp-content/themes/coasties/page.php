@@ -67,9 +67,9 @@ get_header(); ?>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 
-	<?php get_sidebar( 'content' ); ?>
+	<?php #get_sidebar( 'content' ); ?>
 
-	<?php get_sidebar(); ?>
+	<?php #get_sidebar(); ?>
 
 <?php endif; // is_front_page() check ?>
 

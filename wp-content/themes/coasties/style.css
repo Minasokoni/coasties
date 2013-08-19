@@ -58,6 +58,10 @@ a img {
 	border: 0;
 }
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 /* Web fonts */
 
 @font-face {
@@ -371,10 +375,11 @@ a.nav.next {
 	background:#fff;
 	width:320px;
 	position: relative;
-	line-height:0;
 }
 .product img {
 	line-height:0;
+	width:100%;
+	height:auto;
 }
 .product > a {
 	padding:11px 0;
@@ -434,7 +439,7 @@ a.nav.next {
 
 .panel {
 	background:#fff;
-	padding:25px;
+	padding:18px;
 }
 .panel a {
 	text-decoration:none;
@@ -455,7 +460,7 @@ a.nav.next {
 }
 
 .footer-block input[type="submit"]{
-	width:110px;
+	width:140px;
 	height:43px;
 	border:none;
 	background:#f83c23;
@@ -547,6 +552,11 @@ nav#subnav ul li a:hover {
 	padding:11px 30px;
 	background:#f83c23;
 	color:#fff;
+	border:none;
+	height:45px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	font:normal normal 14px 'gtb', sans-serif;
 }
 
 ul.sidebar {
@@ -700,6 +710,130 @@ div.post a.attachment-featured-thumbnail img {
 
 .right {
 	float:right;
+}
+
+/* WOO */
+
+.woocommerce-breadcrumb {
+	display: none;
+}
+
+body.single-product .product {
+	width:100%;
+	padding:40px;
+	margin:0;
+}
+
+body.single-product .images {
+	width:473px;
+	float:left;
+}
+
+body.single-product .summary {
+	/*float:left;*/
+}
+
+body.single-product #info-reviews {
+	display:none;
+}
+
+select {
+	-webkit-appearance: none;
+	border:2px solid #000;
+	height:45px;
+	padding:0 10px;
+	font-weight:bold;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	width:100%;
+	position:relative;
+	color:#000;
+	font:normal normal 14px 'gtb', sans-serif;
+	background:#fff url(images/select.jpg) right center no-repeat;
+}
+
+label {
+	display:block;
+	width:100%;
+	float:left;
+	font:normal normal 14px 'gtb', sans-serif;
+	color:#b8b8b8;
+	margin:0 0 5px 0;
+}
+
+ul.variations li {
+	float:left;
+	width:190px;
+	margin:0 20px 20px 0;
+}
+
+li.reset {
+	display:none;
+}
+ul.variations li.last {
+	margin:0 0 20px 0;
+	float:right;
+}
+
+form.variations_form {
+	width:400px;
+	float:left;
+}
+
+input.minus,
+input.plus {
+	display:none;
+}
+
+.quantity {
+	float:left;
+	width:86px;
+}
+.quantity input {
+	border:2px solid #000;
+	height:45px;
+	padding:0 10px;
+	width:100%;
+	font:normal normal 14px 'gtb', sans-serif;
+}
+
+.variations_button {
+	float:left;
+	width:100%;
+	margin:40px 0 0 0;
+}
+
+.variations_button button{
+	width: 295px;
+	float:right;
+	margin: 23px 0 0 0;
+}
+
+.badge {
+	width:52px;
+	height:52px;
+	display:block;
+	position: absolute;
+	top:288px;
+	z-index:999;
+	right:15px;
+	background:#f00;
+	text-align:center;
+	font:normal normal 13px/52px 'gtb', sans-serif;
+	-webkit-border-radius: 52px;
+	-moz-border-radius: 52px;
+	border-radius: 52px;
+}
+.badge.new {
+	background:#bbf0e9;
+}
+.badge.free {
+	background:#c2f0bb;
+}
+.badge.sale {
+	background:#f83c23;
+	color:#fff;
 }
 
 @media only screen and (max-width: 320px) {
