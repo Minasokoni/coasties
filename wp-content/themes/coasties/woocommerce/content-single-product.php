@@ -40,6 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * @hooked woocommerce_output_product_data_tabs - 10
 		 * @hooked woocommerce_output_related_products - 20
 		 */
+		remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
@@ -63,4 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 </div><!-- #product-<?php the_ID(); ?> -->
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php 
+	add_action('woocommerce_after_single_product', 'woocommerce_output_product_data_tabs', 10 );
+	do_action( 'woocommerce_after_single_product' ); 
+?>

@@ -836,6 +836,107 @@ input.plus {
 	color:#fff;
 }
 
+.description {
+	float:left;
+	width:390px;
+	margin:0 0 50px 20px;
+}
+.description h2,
+.specs h2 {
+	font:normal normal 21px 'gtb', sans-serif;
+	margin:30px 0;
+}
+.description p {
+	font:normal normal 16px/30px 'gt', sans-serif;
+}
+
+#custom {
+	width:390px;
+	float:left;
+	clear:left;
+	text-align:center;
+	position:relative;
+	border:2px solid #000;
+	padding:20px;
+	margin:0 0 0 20px;
+}
+#custom h4 {
+	margin:0;
+	font:normal normal 16px 'gtb', sans-serif;
+	margin:0 0 5px 0;
+}
+#custom p {
+	font:normal normal 16px/24px 'gt', sans-serif;
+	margin:0 0 10px 0;
+}
+#custom a {
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#f83c23;
+	font:normal normal 14px 'gtb', sans-serif;
+}
+#custom:after {
+	content:'';
+	border:1px solid #000;
+	position: absolute;
+	display:block;
+	top:5px;
+	left:5px;
+	bottom:5px;
+	right:5px;
+	z-index:-1;
+}
+div.specs {
+	float:right;
+	width:473px;
+	margin:0 20px 0 0;
+}
+
+div.specs ul li {
+	margin:0 0 20px 0;
+	font:normal normal 16px/24px 'gt', sans-serif;
+}
+
+div.specs ul li:before {
+	content: "•";
+	font-size:16px;
+	padding-right: 10px;
+}
+
+.summary {
+	float:right;
+	width:400px;
+}
+
+.summary h1 {
+	text-align:center;
+	font:normal normal 30px 'gtb', sans-serif;
+	letter-spacing:1px;
+}
+
+.summary > div p.price {
+	display:none;
+}
+
+.summary > div p {
+	font:normal normal 16px/24px 'gt', sans-serif;
+	text-align:center;
+	margin:0 0 50px 0;
+}
+.thumbnails {
+	text-align:center;
+	margin:20px 0 0 0;
+}
+.thumbnails img {
+	width:65px;
+	height:65px;
+}
+.thumbnails a {
+	margin:0 20px 0 0;
+}
+.thumbnails a:last-child {
+	margin:0;
+}
 @media only screen and (max-width: 320px) {
 
 	.wrapper {
