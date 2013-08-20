@@ -718,19 +718,15 @@ div.post a.attachment-featured-thumbnail img {
 	display: none;
 }
 
-body.single-product .product {
+body.single-product div[data-type="main-window"] {
 	width:100%;
 	padding:40px;
 	margin:0;
 }
 
-body.single-product .images {
+body.single-product div[data-type="main-window"] .images {
 	width:473px;
 	float:left;
-}
-
-body.single-product .summary {
-	/*float:left;*/
 }
 
 body.single-product #info-reviews {
@@ -936,6 +932,16 @@ div.specs ul li:before {
 }
 .thumbnails a:last-child {
 	margin:0;
+}
+
+div.upsells {
+	float:left;
+	width:100%;
+}
+div.upsells h2 {
+	text-align:center;
+	font:normal normal 21px 'gtb', sans-serif;
+	margin:50px 0;
 }
 @media only screen and (max-width: 320px) {
 
