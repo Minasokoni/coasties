@@ -51,7 +51,7 @@ var slider = slider || ( function ( container, nav) {
 
 $(function(){
 
-	slider = new slider($('#slider > ul'), $('a.nav'));
+	slider = new slider($('body.home #slider > ul'), $('a.nav'));
 
 	slider.nav.on('click', function(){
 		slider.setCurrent($(this).data('direction'));
@@ -59,4 +59,16 @@ $(function(){
 		return false;
 	});
 
+
+/**
+ * pdp slider
+ */
+	$('#product-img-slider').flexslider({
+		animation: "slide",
+		controlNav: "thumbnails"
+	});
+
+
 });
+
+

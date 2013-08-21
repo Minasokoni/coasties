@@ -39,13 +39,7 @@ document.documentElement.className = document.documentElement.className.replace(
 	</div>
 	<nav>
 		<div class="row">
-			<ul>
-				<li><a href="listing.html">Wheels</a></li>
-				<li><a href="#">Parts</a></li>
-				<li id="logo"><a href="#">Logo</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">How To</a></li>
-			</ul>
+			<?php wp_nav_menu('main'); ?> 
 		</div>
 	</nav>
 </header>

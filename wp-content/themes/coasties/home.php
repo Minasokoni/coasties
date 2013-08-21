@@ -78,22 +78,48 @@ get_header(); ?>
 	<div class="row bottom home">
 		<div class="wrapper">
 			<h3 class="center title">What's New</h3>
-			<div class="product">
-				<a href="#">Shop Now</a>
-				<img src="http://lorempixel.com/320/320/transport/"/>
-				<div class="panel"><a href="#">Deep V Machined wheelset<span class="price">$195</span></a></div>
-			</div>
-			<div class="product">
-				<a href="#">Shop Now</a>
-				<img src="http://lorempixel.com/320/320/transport/"/>
-				<div class="panel"><a href="#">Deep V Machined wheelset<span class="price">$195</span></a></div>
-			</div>
-			<div class="product">
-				<a href="#">Shop Now</a>
-				<img src="http://lorempixel.com/320/320/transport/"/>
-				<div class="panel"><a href="#">Deep V Machined wheelset<span class="price">$195</span></a></div>
-			</div>
-		</div>
+        <?php
+            $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 3, 'orderby' =>'date','order' => 'DESC' );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+				<div <?php post_class( $classes ); ?>>
+						<?php
+					
+						$tag = "";
+
+						if ($product->is_on_sale()) {
+							
+							$tag = apply_filters('woocommerce_sale_flash', '<span class="badge sale">'.__( 'Sale', 'woocommerce' ).'</span>', $post, $product);
+
+						} else if (!$product->get_price()) {
+							
+							$tag = '<span class="badge free">' . __( 'Free', 'swiftframework' ) . '</span>';
+							
+						} else {
+
+							$postdate 		= get_the_time( 'Y-m-d' );			// Post date
+							$postdatestamp 	= strtotime( $postdate );			// Timestamped post date
+							$newness 		= 7; 	// Newness in days
+
+							if ( ( time() - ( 60 * 60 * 24 * $newness ) ) < $postdatestamp ) { // If the product was published within the newness time frame display the new badge
+								$tag = '<span class="badge new">' . __( 'New', 'swiftframework' ) . '</span>';
+							}
+							
+						}
+						echo $tag;
+					?>
+					<a href="<?php the_permalink(); ?>">Shop Now</a>
+					<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300" height="300" />'; ?>
+					<div class="panel">
+						<a href="<?php the_permalink(); ?>">
+							<?php the_title(); ?><?php if ( $price_html = $product->get_price_html() ) : ?>
+							<span class="price"><?php echo $price_html; ?></span>
+							<?php endif; ?>
+						</a>
+					</div>
+				</div>
+        <?php endwhile; ?>
+        <?php wp_reset_query(); ?>
 	</div>
 
 <?php get_footer(); ?>

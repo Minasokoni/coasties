@@ -164,7 +164,9 @@ header#main nav ul li a {
 	padding:0 0 5px 0;
 }
 
-header#main nav ul li a:hover {
+header#main nav ul li a:hover,
+header#main nav ul li.current-menu-item a,
+header#main nav ul li.current_page_parent a {
 	border-bottom:3px solid #f83c23;
 	color:#f83c23;
 	-webkit-transition: all 0.35s ease-in-out;
@@ -173,12 +175,13 @@ header#main nav ul li a:hover {
 	transition:all 0.35s ease-in-out;
 }
 
-header#main nav ul li#logo a:hover {
+header#main nav ul li#menu-item-86 a:hover,
+header#main nav ul li#menu-item-86.current-menu-item a {
 	border:none;
 }
 
 
-header#main nav ul li#logo a {
+header#main nav ul li#menu-item-86 a {
 	width:152px;
 	height:152px;
 	background:url(images/templogo.png) 0 0 no-repeat;
@@ -727,6 +730,7 @@ body.single-product div[data-type="main-window"] {
 body.single-product div[data-type="main-window"] .images {
 	width:473px;
 	float:left;
+	position: relative;
 }
 
 body.single-product #info-reviews {
@@ -820,6 +824,10 @@ input.plus {
 	-webkit-border-radius: 52px;
 	-moz-border-radius: 52px;
 	border-radius: 52px;
+}
+.images .badge {
+	top:-20px;
+	right:-20px;
 }
 .badge.new {
 	background:#bbf0e9;
@@ -919,19 +927,32 @@ div.specs ul li:before {
 	text-align:center;
 	margin:0 0 50px 0;
 }
-.thumbnails {
-	text-align:center;
+.flex-control-thumbs {
 	margin:20px 0 0 0;
+	padding:0;
+	text-align:center;
 }
-.thumbnails img {
+.flex-control-thumbs li {
+	display:inline-block;
+	cursor:pointer;
+	margin:0 10px;
+}
+.flex-control-thumbs img {
 	width:65px;
 	height:65px;
+}
+.flex-control-thumbs img.flex-active {
+	border:4px solid #d9d9d9;
+	position: relative;
 }
 .thumbnails a {
 	margin:0 20px 0 0;
 }
 .thumbnails a:last-child {
 	margin:0;
+}
+.flex-direction-nav {
+	display:none;
 }
 
 div.upsells {
@@ -942,6 +963,14 @@ div.upsells h2 {
 	text-align:center;
 	font:normal normal 21px 'gtb', sans-serif;
 	margin:50px 0;
+}
+.woocommerce-result-count {
+	display:none;
+}
+form.woocommerce-ordering {
+	width:100%;
+	float:left;
+	display:none;
 }
 @media only screen and (max-width: 320px) {
 
