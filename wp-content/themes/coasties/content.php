@@ -25,7 +25,8 @@ $format = get_post_format();
 		</div>
 		<?php endif; ?>
 
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h3 class="entry-title title center"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<span class="dash-berlin"></span>
 
 		<div class="entry-meta">
 			<?php if ( 'gallery' == $format ) : ?>

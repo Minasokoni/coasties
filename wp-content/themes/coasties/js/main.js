@@ -68,6 +68,13 @@ $(function(){
 		controlNav: "thumbnails"
 	});
 
+/**
+ * Go to checkout button 
+ */
+
+$('.checkout-button').on('click', function(){
+	$('form.shipping_calculator').submit();
+});
 
 });
 

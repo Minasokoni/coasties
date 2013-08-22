@@ -105,8 +105,13 @@ h2, h3 {
 	font-weight:normal;
 }
 
-h3.title {
+h3.title,
+h1.entry-title {
 	font-size:1.9em;
+}
+h1.entry-title {
+	text-align:center;
+	font:normal normal 30px 'gtb', sans-serif;
 }
 
 p.sub {
@@ -320,7 +325,7 @@ ul {
 	width:100%;
 	float: left;
 }
-.wrapper {
+.wrapper,.content-area {
 	width:1000px;
 	margin:0 auto;
 	position:relative;
@@ -560,6 +565,11 @@ nav#subnav ul li a:hover {
 	text-transform:uppercase;
 	letter-spacing:1px;
 	font:normal normal 14px 'gtb', sans-serif;
+	cursor:pointer;
+}
+.button.clear {
+	color:#f83c23;;
+	background:#fff;
 }
 
 ul.sidebar {
@@ -753,7 +763,16 @@ select {
 	background:#fff url(images/select.jpg) right center no-repeat;
 }
 
-label {
+input.input-text {
+	color:#000;
+	font:normal normal 14px 'gtb', sans-serif;
+	border:2px solid #000;
+	height:45px;
+	padding:0 10px;
+}
+
+label,
+ul.variation li {
 	display:block;
 	width:100%;
 	float:left;
@@ -972,6 +991,181 @@ form.woocommerce-ordering {
 	float:left;
 	display:none;
 }
+table.shop_table {
+	width:673px;
+	float:left;
+	margin:0 20px 0 0;
+}
+
+table.shop_table .qty {
+	width:48px;
+	top:50%;
+	position: absolute;
+	margin-top:-20px;
+	text-align:center;
+	left: 50%;
+	margin-left: -20px;
+}
+
+td.product-quantity {
+	text-align:center;
+	position:relative;
+	height:134px;
+}
+
+table.shop_table thead {
+	display:none;
+}
+
+table.shop_table td {
+	float:left;
+}
+
+table.shop_table img {
+	width:132px;
+	height:132px;
+	float:left;
+}
+
+tr.cart_item {
+	width:100%;
+	background:#fff;
+	float:left;
+	padding:20px;
+	margin:0 0 20px 0;
+}
+td.product-name {
+	width:150px;
+	float:left;
+	margin:0 0 0 20px;
+}
+
+td.product-name a {
+	font:normal normal 16px/24px 'gt', sans-serif;
+	color:#000;
+	text-decoration:none;
+	margin:0 0 5px 0;
+	float:left;
+}
+
+td.product-price {
+	text-align:center;
+	width:63px;
+}
+
+td.product-price span {
+	font:normal normal 16px/134px 'gt', sans-serif;
+}
+
+td.product-remove {
+	width:63px;
+	float:left;
+	text-align:center;
+}
+
+td.product-edit {
+	width:62px;
+	float:right;
+	text-align:center;
+}
+
+td.product-remove a,
+td.product-edit a {
+	text-decoration:none;
+	color:#000;
+	font:normal normal 16px/134px 'gt', sans-serif;
+}
+
+.edit-link {
+	display:none;
+}
+
+article.page {
+	width:100%;
+	float:left;
+}
+
+.cart-collaterals {
+	float:right;
+	width:307px;
+}
+
+form.shipping_calculator {
+	padding:20px;
+	width:100%;
+	float:left;
+	background:#fff;
+	margin:0 0 2px 0;
+}
+
+form.shipping_calculator input[type="text"] {
+	float:left;
+	width:117px;
+}
+.cart-collaterals h2 a{
+	font:normal normal 14px/14px 'gtb', sans-serif;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#000;
+}
+.cart-collaterals h2 {
+	float:left;
+	padding:0;
+	margin:0;
+	width:100%;
+	font:normal normal 14px/14px 'gtb', sans-serif;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#000;
+	margin:0 0 20px 0;
+}
+
+div.coupon {
+	width:100%;
+	float:left;
+	background:#fff;
+	padding:20px;
+	margin:0 0 2px 0;
+}
+div.coupon input[type="submit"]{
+	float:right;
+}
+div.coupon input.input-text{
+	width:170px;
+	float:left;
+}
+div.coupon label {
+	font:normal normal 14px/14px 'gtb', sans-serif;
+	text-transform:uppercase;
+	color:#000;
+	margin:0 0 17px 0;
+}
+
+div.cart_totals {
+	float:left;
+	width:100%;
+	padding:20px;
+	background:#fff;
+}
+
+.woocommerce-message {
+	width:100%;
+	float:left;
+	background:#23b9f8;
+	color:#fff;
+	padding:20px;
+	margin:0 0 20px 0;
+}
+
+.cart_totals table {
+	margin:0 0 20px 0;
+	font:normal normal 14px 'gt', sans-serif;
+}
+
+.order-total td {
+	font:normal normal 20px 'gtb', sans-serif;
+}
+
 @media only screen and (max-width: 320px) {
 
 	.wrapper {

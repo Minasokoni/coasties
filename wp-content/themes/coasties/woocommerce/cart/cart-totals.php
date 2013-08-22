@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		?></small></p>
 	<?php endif; ?>
-
+	<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e( 'Continue to Checkout', 'woocommerce' ); ?>" />
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
 </div>

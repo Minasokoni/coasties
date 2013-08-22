@@ -32,7 +32,8 @@ if ( false === $format )
 		</div><!-- .entry-meta -->
 
 		<?php if ( ( 'standard' == $format ) || ( 'video' == $format ) || ( 'image' == $format ) || ( 'gallery' == $format ) ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h3 class="entry-title center title"><?php the_title(); ?></h3>
+			<span class="dash-berlin"></span>
 		<?php endif; ?>
 
 		<div class="entry-meta">

@@ -10,9 +10,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
-<dl class="variation">
+<ul class="variation">
 	<?php foreach ( $item_data as $data ) : ?>
-		<dt><?php echo esc_html( $data['key'] ); ?>:</dt>
-		<dd><?php echo wp_kses_post( $data['value'] ); ?></dd>
+		<li><?php echo wp_kses_post( $data['value'] ); ?> <?php echo esc_html( $data['key'] ); ?>s</li>
 	<?php endforeach; ?>
-</dl>
+</ul>

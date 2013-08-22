@@ -20,16 +20,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 <table class="shop_table cart" cellspacing="0">
-	<thead>
-		<tr>
-			<th class="product-remove">&nbsp;</th>
-			<th class="product-thumbnail">&nbsp;</th>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-			<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
-		</tr>
-	</thead>
 	<tbody>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -41,12 +31,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-					<td class="product-remove">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
-						?>
-					</td>
 
 					<td class="product-thumbnail">
 						<?php
@@ -91,16 +75,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 								$min 	= apply_filters( 'woocommerce_quantity_input_min', '', $_product );
 								$max 	= apply_filters( 'woocommerce_quantity_input_max', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(), $_product );
 
-								$product_quantity = sprintf( '<div class="quantity"><input type="number" name="cart[%s][qty]" step="%s" min="%s" max="%s" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $cart_item['quantity'] ) );
+								$product_quantity = sprintf( '<div class="quantity"><input type="input" name="cart[%s][qty]" value="%s" size="4" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $step, $min, $max, esc_attr( $cart_item['quantity'] ) );
 							}
 
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
 						?>
 					</td>
 
-					<td class="product-subtotal">
+					<td class="product-edit">
+						<?php printf( '<a href="%s">Edit</a>', get_permalink( $product_id )); ?>
+					</td>
+
+					<td class="product-remove">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', $woocommerce->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s"><i class="icon-remove"></i></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
 						?>
 					</td>
 				</tr>
@@ -110,22 +98,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
+
 		<tr>
 			<td colspan="6" class="actions">
 
-				<?php if ( $woocommerce->cart->coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
-						<?php do_action('woocommerce_cart_coupon'); ?>
-
-					</div>
-				<?php } ?>
-
-				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e( 'Proceed to Checkout &rarr;', 'woocommerce' ); ?>" />
-
 				<?php do_action('woocommerce_proceed_to_checkout'); ?>
+
+				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+	 <input type="submit" style="display:none;" class="checkout-button button alt" name="proceed" value="<?php _e( 'Continue to Checkout', 'woocommerce' ); ?>" />
+
 
 				<?php wp_nonce_field( 'woocommerce-cart') ?>
 			</td>
@@ -141,11 +122,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="cart-collaterals">
 
+
 	<?php do_action('woocommerce_cart_collaterals'); ?>
 
-	<?php woocommerce_cart_totals(); ?>
-
 	<?php woocommerce_shipping_calculator(); ?>
+
+	<?php if ( $woocommerce->cart->coupons_enabled() ) { ?>
+		<div class="coupon">
+
+			<label for="coupon_code"><?php _e( 'Promo Code', 'woocommerce' ); ?></label> <input name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="xxxxxxx" /> <input type="submit" class="button clear" name="apply_coupon" value="<?php _e( 'Add', 'woocommerce' ); ?>" />
+
+			<?php do_action('woocommerce_cart_coupon'); ?>
+
+		</div>
+	<?php } ?>
+
+	<?php woocommerce_cart_totals(); ?>
 
 </div>
 
