@@ -26,7 +26,10 @@ document.documentElement.className = document.documentElement.className.replace(
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-<?php wp_head(); ?>
+<?php 
+global $woocommerce;
+wp_head(); 
+?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -34,7 +37,7 @@ document.documentElement.className = document.documentElement.className.replace(
 <header id="main">
 	<div class="wrapper">
 		<div id="basket">
-			<a href="#">Basket:0</a>
+			<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart' , 'woothemes' ); ?>"><?php echo sprintf(_n('%d item' , '%d items' , $woocommerce->cart->cart_contents_count, 'woothemes' ), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
 		</div>
 	</div>
 	<nav>
