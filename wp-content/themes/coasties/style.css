@@ -171,7 +171,12 @@ header#main nav ul li a {
 
 header#main nav ul li a:hover,
 header#main nav ul li.current-menu-item a,
-header#main nav ul li.current_page_parent a {
+header#main nav ul li.current_page_parent a,
+body.blog li#menu-item-102 a,
+body.category-news li#menu-item-102 a,
+body.category-how-to li#menu-item-102 a,
+body.category-featured li#menu-item-102 a,
+header#main nav ul li.current-page-ancestor a {
 	border-bottom:3px solid #f83c23;
 	color:#f83c23;
 	-webkit-transition: all 0.35s ease-in-out;
@@ -209,6 +214,15 @@ footer#main {
 footer#main .footer-block > a {
 	text-decoration:none;
 	color:#000;
+}
+footer#main .footer-block h3 {
+	margin:0;
+}
+footer#main .footer-block ul {
+	border:none;
+}
+footer#main .footer-block div > ul > li:first-child > a{
+	display:none;
 }
 
 footer#main .footer-block.links > a {
@@ -552,7 +566,8 @@ nav#subnav ul li a {
 	text-decoration:none;
 	color:#000;
 }
-nav#subnav ul li a:hover {
+nav#subnav ul li a:hover,
+nav#subnav ul li a.active {
 	color:#f83c23;
 }
 
@@ -572,17 +587,46 @@ nav#subnav ul li a:hover {
 	background:#fff;
 }
 
+
 ul.sidebar {
 	list-style:none;
 	float: left;
 	font-size:16px;
+	border-bottom:2px solid #000;
+	width:160px;
+	float:left;
+	margin:0 0 30px 0;
+}
+ul#customer {
+	border:none;
 }
 ul.sidebar li a{
 	text-decoration:none;
 	color:#000;
 }
-ul.sidebar li a:hover {
+ul.sidebar li.current-menu-item > a,
+ul.sidebar li > ul li.current_page_parent > a,
+ul.sidebar li > ul li.current-menu-item a {
+	margin:0;
+	float:left;
+	font:normal normal 16px/16px 'gtb', sans-serif;
 	color:#f83c23;
+}
+ul.sidebar li.current_page_parent > a,
+li#menu-item-126 > a,
+li#menu-item-111 > a {
+	color:#000;
+	font:normal normal 16px/16px 'gtb', sans-serif;
+}
+ul.sub-menu {
+	float: left;
+	clear: left;
+	margin:20px 0 0 0;
+}
+ul.sidebar li a:hover,
+ul.sidebar li.current-cat a{ 
+	color:#f83c23;
+	font:normal normal 16px/16px 'gtb', sans-serif;
 }
 ul.sidebar li.title {
 	font:normal normal 16px/16px 'gtb', sans-serif;
@@ -590,6 +634,8 @@ ul.sidebar li.title {
 ul.sidebar li {
 	font:normal normal 16px/16px 'gt', sans-serif;
 	margin:0 0 20px 0;
+	float: left;
+	clear: left;
 }
 
 div.post {
@@ -685,6 +731,34 @@ div.post div.info {
 	height:278px;
 	background:#333;
 	margin:0 0 30px 0;
+	position:relative;
+	overflow: hidden;
+}
+#page header {
+	width:805px;
+	float:right;
+	height:390px;
+	background:#333;
+	margin:0;
+	overflow:hidden;
+	position:relative;
+}
+#page header h2 {
+	font:normal normal 40px/390px 'gtb', sans-serif;
+	color:#fff;
+	text-align:center;
+	margin:0;
+	padding:0;
+	position:relative;
+	z-index:2;
+	text-shadow:1px 1px 1px #000;
+}
+#page header img,
+#blog header img {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:0;
 }
 
 div.nav {
@@ -1164,6 +1238,11 @@ div.cart_totals {
 
 .order-total td {
 	font:normal normal 20px 'gtb', sans-serif;
+}
+
+div.cat {
+	width:100%;
+	float:left;
 }
 
 @media only screen and (max-width: 320px) {

@@ -13,64 +13,32 @@
 
 get_header(); ?>
 
-<?php if ( is_front_page() ) : ?>
-
-	<div class="front-page-content-wrapper">
-		<div class="front-page-content-main">
-
-			<?php if ( twentyfourteen_has_featured_posts() ) : ?>
-				<?php get_template_part( 'featured-content' ); ?>
-			<?php endif; ?>
-
-			<div class="front-page-content-area clearfix">
-
-				<div id="primary" class="content-area no-sidebar">
-					<div id="content" class="site-content" role="main">
+	<div id="page">
+		<div class="wrapper">
+			<?php wp_nav_menu('menu=sidebar&menu_class=sidebar&menu_id=sidebar'); ?>
+			<header>
+				<h2><?php the_title(); ?></h2>
+				<?php if ( has_post_thumbnail() ) { ?>
 					<?php
-						if ( have_posts() ) :
-							while ( have_posts() ) :
-								the_post();
-								get_template_part( 'content', 'page' );
-								comments_template( '', true );
-							endwhile;
-
-							twentyfourteen_content_nav( 'nav-below' );
-						else :
-							get_template_part( 'no-results', 'index' );
-						endif;
+						if ( '' != get_the_post_thumbnail() )
+							the_post_thumbnail( 'featured-thumbnail-large' );
 					?>
-					</div><!-- #content .site-content -->
-				</div><!-- #primary .content-area -->
+				<?php } ?>
+			</header>
+			<?php wp_nav_menu('menu=info&menu_class=sidebar&menu_id=customer'); ?> 
+			<div class="post">
+				<div class="panel">
 
-				<?php get_template_part( 'recent-formatted-posts' ); ?>
+					<div class="content">
+						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+							<?php the_content(); ?>
+						<?php endwhile; else: ?>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
 
-			</div><!-- .front-page-content-area -->
-
-		</div><!-- .front-page-content-main -->
-	</div><!-- .front-page-content-wrapper -->
-
-	<?php get_sidebar(); ?>
-
-<?php else : ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php comments_template( '', true ); ?>
-
-			<?php endwhile; ?>
-
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
-
-	<?php #get_sidebar( 'content' ); ?>
-
-	<?php #get_sidebar(); ?>
-
-<?php endif; // is_front_page() check ?>
+		</div>
+	</div>
 
 <?php get_footer(); ?>

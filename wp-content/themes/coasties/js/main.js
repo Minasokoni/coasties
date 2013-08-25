@@ -76,6 +76,24 @@ $('.checkout-button').on('click', function(){
 	$('form.shipping_calculator').submit();
 });
 
+/**
+ * Listing filter
+ */
+
+$('nav#subnav li a').on('click', function(){
+	var cat = $(this).attr('href');
+	$('nav#subnav li a').removeClass('active');
+	$(this).addClass('active');
+	if(cat != '#all'){
+		$('.cat:visible').slideUp(function(){
+			$(cat).slideDown();
+		});
+	}else{
+		$('.cat').slideDown();
+	}
+	return false;
+});
+
 });
 
 

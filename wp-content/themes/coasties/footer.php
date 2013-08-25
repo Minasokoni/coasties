@@ -15,15 +15,11 @@
 	<div class="wrapper">
 		<div class="footer-block links">
 			<h3>About Coasties</h3>
-			<a href="#">About us</a>
-			<a href="#">Coaster brakes</a>
-			<a href="#">Testimonials</a>
+			<?php wp_nav_menu('menu=sidebar&menu_class=sidebar&menu_id=sidebar'); ?>
 		</div>
 		<div class="footer-block links">
 			<h3>Customer Info</h3>
-			<a href="#">How-to</a>
-			<a href="#">Shipping &amp; Returns</a>
-			<a href="#">Contact Us</a>
+			<?php wp_nav_menu('menu=info&menu_class=sidebar&menu_id=customer'); ?> 
 		</div>
 		<div class="footer-block last">
 			<h3>Ride with us</h3>

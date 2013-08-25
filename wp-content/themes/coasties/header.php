@@ -42,7 +42,7 @@ wp_head();
 	</div>
 	<nav>
 		<div class="row">
-			<?php wp_nav_menu('main'); ?> 
+			<?php wp_nav_menu('menu=main'); ?> 
 		</div>
 	</nav>
 </header>
