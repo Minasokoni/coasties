@@ -604,7 +604,7 @@ nav#subnav ul li a.active {
 	color:#f83c23;
 }
 
-.button {
+.button,.form-submit #submit {
 	padding:11px 30px;
 	background:#f83c23;
 	color:#fff;
@@ -619,7 +619,7 @@ nav#subnav ul li a.active {
 	-o-transition: all 0.35s ease-in-out;
 	transition:all 0.35s ease-in-out;
 }
-.button:hover {
+.button:hover, .form-submit #submit:hover {
 	background:#000;
 }
 .button.clear {
@@ -1052,7 +1052,8 @@ div.specs ul li:before {
 }
 
 .summary > div p.price {
-	display:none;
+	font:normal normal 20px/24px 'gt', sans-serif;
+	margin:0 0 15px 0;
 }
 
 .summary > div p {
@@ -1335,7 +1336,73 @@ div.cat {
 	text-decoration:none;
 	color:#f83c23;
 }
+.woocommerce-message a {
+	text-decoration:none;
+	margin:0 30px 0 0;
+}
 
+#respond, #comments {
+	width:100%;
+	float: left;
+	padding:10px;
+}
+div.post h2.comments-title {
+	margin:0 0 0 10px;
+	float:left;
+	font-size:16px;
+}
+.commentlist {
+	list-style:none;
+	margin:0;
+	padding:0;
+	width:100%;
+	float:left;
+}
+.commentlist li {
+	padding:10px;
+}
+#respond form {
+	width:100%;
+	float:left;
+}
+#comments {
+	border-top:2px solid #f8f4e6;
+	padding-top:20px;
+}
+#respond form textarea {
+	width:100%;
+	float:left;
+	resize:none;
+	font:normal normal 14px 'gtb', sans-serif;
+	padding:20px;
+	margin:0 0 20px 0;
+	border:2px solid #000;
+}
+.comment-content {
+	float:left;
+	width:100%;
+	margin:10px 0;
+}
+#respond form p {
+	float:left;
+	width:100%;
+}
+p.logged-in-as{
+	font-size:14px !important;
+	margin:0 0 20px 0 !important;
+}
+p.comment-form-comment {
+	float:left;
+}
+div.comment-meta a {
+	font-size:12px;
+	text-decoration: none;
+}
+p.form-allowed-tags {
+	font: normal normal 12px/15px 'gt', sans-serif !important;
+	margin:0 0 30px 0 !important;
+	float:left;
+}
 @media only screen and (max-width: 320px) {
 
 	.wrapper {
