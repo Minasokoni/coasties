@@ -217,6 +217,10 @@ footer#main .footer-block > a {
 }
 footer#main .footer-block h3 {
 	margin:0;
+	font-size:16px;
+}
+footer#main .footer-block {
+	font-size:16px;
 }
 footer#main .footer-block ul {
 	border:none;
@@ -418,11 +422,12 @@ a.nav.next {
 	text-decoration:none;
 	opacity: 0;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-	-webkit-transition: opacity 0.35s ease-in-out, margin-top 0 linear;
+	-webkit-transition: all 0.35s ease-in-out, margin-top 0 linear;
 	-webkit-transition-delay: 0s, 0.35s;
-	-moz-transition: opacity 0.35s ease-in-out, margin-top 0 linear 0.35s;
-	-o-transition: opacity 0.35s ease-in-out, margin-top 0 linear 0.35s;
-	transition: opacity 0.35s ease-in-out, margin-top 0 linear 0.35s;
+	-moz-transition: all 0.35s ease-in-out, margin-top 0 linear 0.35s;
+	-o-transition: all 0.35s ease-in-out, margin-top 0 linear 0.35s;
+	transition: all 0.35s ease-in-out, margin-top 0 linear 0.35s;
+
 }
 .product:hover > a {
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -433,6 +438,11 @@ a.nav.next {
 	-o-transition: opacity 0.35s ease-in-out, margin-top 0.7s cubic-bezier(0.24, 0.835, 0, 1);
 	transition: opacity 0.35s ease-in-out, margin-top 0.7s cubic-bezier(0.24, 0.835, 0, 1);
 }
+
+.product > a:hover {
+	background:#000;
+}
+
 .product,
 .footer-block {
 	width:320px;
@@ -476,24 +486,35 @@ a.nav.next {
 	position: relative;
 }
 .footer-block input[type="text"]{
-	width:180px;
+	width:200px;
 	padding:13px;
 	border:2px solid #000;
+	font:normal normal 11px 'gtb', sans-serif;
 }
 
 .footer-block input[type="submit"]{
 	width:140px;
-	height:43px;
+	height:43.5px;
 	border:none;
 	background:#f83c23;
 	float:right;
 	position: absolute;
 	top:2px;
-	right:0;
-	font:normal normal 14px 'gtb', sans-serif;
+	right:-20px;
+	font:normal normal 14px 'gt', sans-serif;
 	color:#fff;
 	text-transform:uppercase;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition:all 0.35s ease-in-out;
+	cursor:pointer;
 }
+
+.footer-block input[type="submit"]:hover {
+	background:#000;
+}
+
 .footer-block .social {
 	width:32px;
 	height:32px;
@@ -505,7 +526,7 @@ a.nav.next {
 	text-align:center;
 	line-height:32px;
 	font-size:16px;
-	margin:10px 5px 0 0;
+	margin:10px 20px 0 0;
 }
 .footer-block .social:hover {
 	background:#f83c23;
@@ -523,21 +544,33 @@ span.dash-berlin {
 }
 
 div#basket {
-	width:161px;
+	padding:0 30px;
 	height:41px;
 	background:#fff url(images/basket_bg.jpg) 0 0 no-repeat;
 	position: absolute;
 	right:0;
 	top:0;
+	text-align:center;
 }
 
 div#basket a {
 	text-align:center;
-	display:block;
+	display:inline-block;
 	font-size:14px;
 	line-height:41px;
 	color:#000;
+	margin:0 10px;
 	text-decoration:none;
+}
+div#basket span {
+	width:1px;
+	padding:0;
+	display:inline-block;
+	height:15px;
+	margin:0 0 0 5px;
+	position: relative;
+	top:3px;
+	background:#000;
 }
 
 /* listing */
@@ -579,8 +612,15 @@ nav#subnav ul li a.active {
 	height:45px;
 	text-transform:uppercase;
 	letter-spacing:1px;
-	font:normal normal 14px 'gtb', sans-serif;
+	font:normal normal 14px 'gt', sans-serif;
 	cursor:pointer;
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition:all 0.35s ease-in-out;
+}
+.button:hover {
+	background:#000;
 }
 .button.clear {
 	color:#f83c23;;
@@ -1243,6 +1283,57 @@ div.cart_totals {
 div.cat {
 	width:100%;
 	float:left;
+}
+
+#guide {
+	background:#fff;
+	margin:2px 0 30px 0;
+	padding:40px;
+	width:100%;
+	float:left;
+	position: relative;
+	display:none;
+}
+
+#guide a.close {
+	position: absolute;
+	top:40px;
+	right:40px;
+	color:#000;
+	text-decoration:none;
+}
+
+#guide nav {
+	float:left;
+	width:100%;
+	margin:0 0 20px 0;
+}
+
+#guide nav a {
+	font:normal normal 14px 'gtb', sans-serif;
+	text-decoration:none;
+	margin:0 30px 0 0;
+	color:#000;
+}
+#guide section div {
+	display:none;
+}
+
+#guide nav a.active {
+	border-bottom:2px solid #f83c23;
+	color:#f83c23;
+}
+
+#guide-btn {
+	text-align:center;
+	display:block;
+	margin:30px 0 0 105px;
+	float:left;
+	font:normal normal 12px 'gtb', sans-serif;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	text-decoration:none;
+	color:#f83c23;
 }
 
 @media only screen and (max-width: 320px) {

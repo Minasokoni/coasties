@@ -94,6 +94,25 @@ $('nav#subnav li a').on('click', function(){
 	return false;
 });
 
+
+	$('#guide-btn, #guide a.close').on('click', function(){
+		$('#guide').slideToggle(300);
+		return false;
+	});
+
+	$('#guide section div:first').show();
+
+	$('#guide nav a').on('click', function(){
+		var tab = $(this).attr('href');
+		$('#guide section div:visible').fadeOut(function(){
+			$(tab).fadeIn();
+		});
+		$('#guide nav a').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	});
+
+
 });
 
 

@@ -59,9 +59,28 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			do_action( 'woocommerce_single_product_summary' );
 		?>
 
+		<a href="#" id="guide-btn">Customization guide</a>
+
 	</div><!-- .summary -->
 
 </div><!-- #product-<?php the_ID(); ?> -->
+<div id="guide">
+	<a class="close" href="#"><i class="icon-remove"></i></a>
+	<nav>
+		<a class="active" href="#rims">Rims</a>
+		<a href="#hubs">Hubs</a>
+		<a href="#spokes">Spokes</a>
+		<a href="#nipples">Nipples</a>
+	</nav>
+	<section>
+		<div id="rims">
+			rims
+		</div>
+		<div id="hubs">hubs</div>
+		<div id="spokes">spokes</div>
+		<div id="nipples">nipples</div>
+	</section>
+</div>
 
 <?php 
 	add_action('woocommerce_after_single_product', 'woocommerce_output_product_data_tabs', 10 );
